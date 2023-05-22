@@ -11,3 +11,10 @@ def qsort(data):
         else:
             right.append(data[index])
     return qsort(left) + [pivot] + qsort(right)
+
+def qsort2(data):
+    pivot = data[0]
+    left = [item for item in data[1:] if pivot > item]
+    right = [item for item in data[1:] if pivot <= item]
+
+    return qsort(left) + [pivot] + qsort(right)
